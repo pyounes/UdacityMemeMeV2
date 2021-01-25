@@ -45,8 +45,35 @@
 			isa = PBXGroup;
 			children = (
 				622E92F225B74F2200806BF1 /* MemeMeUITextField.swift */,
+				625D0B3D25A3859E004D0449 /* Main.storyboard */,
+				625D0B4225A385A6004D0449 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		622E933625BF40D200806BF1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				625D0B3B25A3859E004D0449 /* MemeMeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		622E933725BF40E700806BF1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				625D0B3925A3859E004D0449 /* SceneDelegate.swift */,
+				625D0B3725A3859E004D0449 /* AppDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		622E933925BF433500806BF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				625D0B4025A385A6004D0449 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		623D261A25B6028A00E5480E /* Model */ = {
@@ -76,14 +103,11 @@
 		625D0B3625A3859E004D0449 /* MemeMeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				622E933925BF433500806BF1 /* Resources */,
+				622E933725BF40E700806BF1 /* Base */,
+				622E933625BF40D200806BF1 /* Controllers */,
 				622E92F125B74EDF00806BF1 /* Views */,
 				623D261A25B6028A00E5480E /* Model */,
-				625D0B3725A3859E004D0449 /* AppDelegate.swift */,
-				625D0B3925A3859E004D0449 /* SceneDelegate.swift */,
-				625D0B3B25A3859E004D0449 /* MemeMeVC.swift */,
-				625D0B3D25A3859E004D0449 /* Main.storyboard */,
-				625D0B4025A385A6004D0449 /* Assets.xcassets */,
-				625D0B4225A385A6004D0449 /* LaunchScreen.storyboard */,
 				625D0B4525A385A6004D0449 /* Info.plist */,
 			);
 			path = MemeMeV2;
