@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SentMemesCollectionVC: UIViewController {
+class SentMemesCollectionVC: UICollectionViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -33,19 +33,18 @@ class SentMemesCollectionVC: UIViewController {
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
-
-
-}
-
-// MARK: - Collection Delegate and Data Source Extension
-
-extension SentMemesCollectionVC: UICollectionViewDataSource, UICollectionViewDelegate {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+        print("CollectionView WillAppear")
+    }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    // MARK: - Collection View Delegate
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeMeCollectionViewCell", for: indexPath) as! MemeMeCollectionViewCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
@@ -53,9 +52,9 @@ extension SentMemesCollectionVC: UICollectionViewDataSource, UICollectionViewDel
         // Set the name and image
         cell.imageView?.image = meme.memedImage
         
+        
         return cell
     }
-    
-    
-    
+
+
 }

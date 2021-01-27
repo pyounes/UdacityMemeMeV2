@@ -16,8 +16,5 @@ class MemeMeCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setupCell(meme: Meme) {
-        self.imageView.image = meme.memedImage
-    }
     
 }
