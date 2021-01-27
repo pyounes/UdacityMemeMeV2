@@ -187,7 +187,7 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
                         , memedImage: memedImage)
         
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
-        
+        dismiss(animated: true, completion: nil)
     }
 
     
