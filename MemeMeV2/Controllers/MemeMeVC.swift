@@ -4,7 +4,7 @@
 //
 //  Created by Pierre Younes on 1/4/21.
 //
-
+import Foundation
 import UIKit
 
 class MemeMeVC: UIViewController, UITextFieldDelegate {
@@ -22,9 +22,6 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     
-    
-    // MARK: Variables
-    var memes = [Meme]()
     
     // Set as true when an image is set in the imageView Outlet
     var isImageSelected: Bool = false {
@@ -189,7 +186,8 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
                         , originalImage: imageView.image!
                         , memedImage: memedImage)
         
-        memes.append(meme)
+        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+        dismiss(animated: true, completion: nil)
     }
 
     
