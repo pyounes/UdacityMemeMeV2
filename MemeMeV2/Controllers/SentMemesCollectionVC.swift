@@ -26,17 +26,16 @@ class SentMemesCollectionVC: UICollectionViewController {
         // Do any additional setup after loading the view.
         let space: CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        print(dimension)
+
         // flowlayout spces
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: 120.0, height: 120.0)
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
-        print("CollectionView WillAppear")
     }
     
     // MARK: - Collection View Delegate

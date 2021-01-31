@@ -30,6 +30,9 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Edited Meme Index
+    var memeIndex: Int!
+    
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
@@ -45,6 +48,8 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
         bottomTextField.delegate = self
         
         isImageSelected = false
+        
+        if memeIndex != nil { loadMemeToEdit(meme: memes[memeIndex])}
         
     }
     
@@ -62,18 +67,20 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
         super.viewWillDisappear(animated)
         
         // Unsubscribe from Keyboard notification
-        unsubscribeToKeyboardNotification()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func loadMemeToEdit(meme: Meme) {
+        self.isImageSelected = true
+        self.imageView.image = meme.originalImage
+        self.topTextField.text = meme.topText
+        self.bottomTextField.text = meme.bottomText
     }
     
     // MARK: - Subscribing to notification
     func subscribeToKeyboardNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(KeyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(KeyboardWillHide(_:)), name: UIWindow.keyboardWillHideNotification, object: nil)
-    }
-    
-    // MARK: - UnSubscribe from notifications
-    func unsubscribeToKeyboardNotification() {
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Action when keyboard is Shown or Hidden
@@ -143,6 +150,7 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
         self.topTextField.text = "TOP"
         self.bottomTextField.text = "BOTTOM"
         self.isImageSelected = false
+        self.memeIndex = nil
     }
     
     // MARK: - Delegates
@@ -192,7 +200,12 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
                         , originalImage: imageView.image!
                         , memedImage: memedImage)
         
-        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+        if memeIndex != nil {
+            (UIApplication.shared.delegate as! AppDelegate).memes[memeIndex] = meme
+        } else {
+            (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
 

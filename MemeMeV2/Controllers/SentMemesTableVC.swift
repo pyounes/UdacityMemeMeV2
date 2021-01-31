@@ -28,7 +28,6 @@ class SentMemesTableVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        print("ViewWillAppear Called")
     }
 
 }
