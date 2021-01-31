@@ -27,7 +27,6 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
     var isImageSelected: Bool = false {
         didSet {
             shareButton.isEnabled = isImageSelected
-            cancelButton.isEnabled = isImageSelected
         }
     }
     
@@ -132,6 +131,8 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        // Dismiss the View if there were no image selected, otherwise clear ImageView and Top/Bottom Labels
+        if !isImageSelected { dismiss(animated: true, completion: nil) }
         
         self.imageView.image = nil
         self.topTextField.text = "TOP"

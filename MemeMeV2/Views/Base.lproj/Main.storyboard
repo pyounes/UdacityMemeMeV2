@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4750" y="149"/>
+            <point key="canvasLocation" x="4998" y="460"/>
         </scene>
         <!--Sent Memes TableVC-->
         <scene sceneID="Dt5-Ot-1VL">
@@ -272,7 +272,13 @@
                             <outlet property="delegate" destination="QaD-ow-oVy" id="MIA-1F-z4W"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="ec0-P6-02c"/>
+                    <navigationItem key="navigationItem" id="ec0-P6-02c">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="dUy-9f-LNi">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Jaj-S1-BZ1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Iud-1x-lS6" id="FfR-Vr-KqL"/>
                         <outlet property="flowLayout" destination="avL-hp-d5y" id="aRE-1d-DGq"/>
@@ -283,6 +289,9 @@
             <point key="canvasLocation" x="3861.5999999999999" y="841.52923538230891"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jaj-S1-BZ1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
