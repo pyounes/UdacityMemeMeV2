@@ -57,6 +57,7 @@ class SentMemesCollectionVC: UICollectionViewController {
     }
 
 
+    // Open Meme Detail VC When an Item is selected
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let detailVC = storyboard?.instantiateViewController(identifier: "MemeDetailVC") as? MemeDetailVC {
             detailVC.memeIndex = (indexPath as NSIndexPath).row

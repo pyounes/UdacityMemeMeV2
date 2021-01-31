@@ -52,10 +52,19 @@ extension SentMemesTableVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // Open Meme Detail VC When a row is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailVC = storyboard?.instantiateViewController(identifier: "MemeDetailVC") as? MemeDetailVC {
             detailVC.memeIndex = (indexPath as NSIndexPath).row
             navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
+    
+    // Swipe To Delete meme
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            (UIApplication.shared.delegate as! AppDelegate).memes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }
