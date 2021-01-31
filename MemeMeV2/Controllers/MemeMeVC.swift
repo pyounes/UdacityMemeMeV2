@@ -30,6 +30,11 @@ class MemeMeVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    var memes: [Meme]! {
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        return appDelegate.memes
+    }
     
     // MARK: - App Life Cycle
     override func viewDidLoad() {

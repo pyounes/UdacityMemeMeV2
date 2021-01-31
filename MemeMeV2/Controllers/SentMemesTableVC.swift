@@ -30,14 +30,6 @@ class SentMemesTableVC: UIViewController {
         tableView.reloadData()
         print("ViewWillAppear Called")
     }
-    
-    @IBAction func showMemeMeVC(_ sender: UIBarButtonItem) {
-//        let memeMeVC = MemeMeVC()
-//        memeMeVC.modalPresentationStyle = .fullScreen
-//        memeMeVC.loadViewIfNeeded()
-//        self.present(memeMeVC, animated: true, completion: nil)
-    }
-    
 
 }
 
@@ -58,5 +50,12 @@ extension SentMemesTableVC: UITableViewDelegate, UITableViewDataSource {
         cell.imageView?.image = meme.memedImage
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailVC = storyboard?.instantiateViewController(identifier: "MemeDetailVC") as? MemeDetailVC {
+            detailVC.memeIndex = (indexPath as NSIndexPath).row
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 }

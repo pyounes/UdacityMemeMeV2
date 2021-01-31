@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="4998" y="460"/>
         </scene>
-        <!--Meme Detail View Controller-->
+        <!--Meme DetailVC-->
         <scene sceneID="Jjh-7a-Za3">
             <objects>
-                <viewController id="idl-O3-j7e" customClass="MemeDetailViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="idl-O3-j7e" customClass="MemeDetailVC" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93r-hB-ZpW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

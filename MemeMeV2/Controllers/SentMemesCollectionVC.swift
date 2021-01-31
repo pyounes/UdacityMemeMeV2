@@ -57,4 +57,11 @@ class SentMemesCollectionVC: UICollectionViewController {
     }
 
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let detailVC = storyboard?.instantiateViewController(identifier: "MemeDetailVC") as? MemeDetailVC {
+            detailVC.memeIndex = (indexPath as NSIndexPath).row
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
+    
 }
