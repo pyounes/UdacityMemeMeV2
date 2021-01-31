@@ -109,6 +109,35 @@
             </objects>
             <point key="canvasLocation" x="4998" y="460"/>
         </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="Jjh-7a-Za3">
+            <objects>
+                <viewController id="idl-O3-j7e" customClass="MemeDetailViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="93r-hB-ZpW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-Z5-e11">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hhn-iV-3jN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ClN-Z5-e11" firstAttribute="top" secondItem="hhn-iV-3jN" secondAttribute="top" id="SYR-fq-G0d"/>
+                            <constraint firstItem="hhn-iV-3jN" firstAttribute="bottom" secondItem="ClN-Z5-e11" secondAttribute="bottom" id="fSy-cc-ktV"/>
+                            <constraint firstItem="ClN-Z5-e11" firstAttribute="leading" secondItem="hhn-iV-3jN" secondAttribute="leading" id="wSz-6t-eEd"/>
+                            <constraint firstItem="hhn-iV-3jN" firstAttribute="trailing" secondItem="ClN-Z5-e11" secondAttribute="trailing" id="wwU-GY-8yn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="memedImage" destination="ClN-Z5-e11" id="Di7-fI-8Lk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jeO-Ob-3S1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5830" y="459"/>
+        </scene>
         <!--Sent Memes TableVC-->
         <scene sceneID="Dt5-Ot-1VL">
             <objects>
