@@ -12,9 +12,4 @@ class MemeMeCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    
 }
