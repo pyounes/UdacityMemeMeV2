@@ -12,7 +12,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeMeVC" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeMeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MemeMeVC" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4750" y="149"/>
+            <point key="canvasLocation" x="4998" y="460"/>
+        </scene>
+        <!--Meme DetailVC-->
+        <scene sceneID="Jjh-7a-Za3">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="idl-O3-j7e" customClass="MemeDetailVC" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="93r-hB-ZpW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-Z5-e11">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hhn-iV-3jN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ClN-Z5-e11" firstAttribute="top" secondItem="hhn-iV-3jN" secondAttribute="top" id="SYR-fq-G0d"/>
+                            <constraint firstItem="hhn-iV-3jN" firstAttribute="bottom" secondItem="ClN-Z5-e11" secondAttribute="bottom" id="fSy-cc-ktV"/>
+                            <constraint firstItem="ClN-Z5-e11" firstAttribute="leading" secondItem="hhn-iV-3jN" secondAttribute="leading" id="wSz-6t-eEd"/>
+                            <constraint firstItem="hhn-iV-3jN" firstAttribute="trailing" secondItem="ClN-Z5-e11" secondAttribute="trailing" id="wwU-GY-8yn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="memedImage" destination="ClN-Z5-e11" id="Di7-fI-8Lk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jeO-Ob-3S1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5830" y="459"/>
         </scene>
         <!--Sent Memes TableVC-->
         <scene sceneID="Dt5-Ot-1VL">
@@ -272,7 +301,13 @@
                             <outlet property="delegate" destination="QaD-ow-oVy" id="MIA-1F-z4W"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="ec0-P6-02c"/>
+                    <navigationItem key="navigationItem" id="ec0-P6-02c">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="dUy-9f-LNi">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Jaj-S1-BZ1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Iud-1x-lS6" id="FfR-Vr-KqL"/>
                         <outlet property="flowLayout" destination="avL-hp-d5y" id="aRE-1d-DGq"/>
@@ -283,6 +318,9 @@
             <point key="canvasLocation" x="3861.5999999999999" y="841.52923538230891"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jaj-S1-BZ1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
